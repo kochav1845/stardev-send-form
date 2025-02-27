@@ -28,7 +28,7 @@ const mailOptions = {
   replyTo: req.body.email,
   to: 'a88933513@gmail.com',
   subject: `Message from ${req.body.name}: ${req.body.email}`,
-  text: `Hi star dev, ${req.body.contact}, needs a ${req.body.type} his phone number is ${req.body.phone}he left a message: ${req.body.message}.`
+  text: `Hi star dev, ${req.body.name}, needs a ${req.body.type} his phone number is ${req.body.phone}he left a message: ${req.body.message}.`
 };
 transporter.sendMail(mailOptions, (error, info)=>{
   if(error){
