@@ -13,13 +13,10 @@ const PORT = process.env.PORT || 5000;
 
 // Serve sitemap.xml
 app.get('/sitemap.xml', (req, res) => {
-    res.sendFile(path.join(__dirname, 'sitemap.xml'));
+    res.sendFile(path.join('sitemap.xml'));
 });
 
-// Optional: Serve robots.txt if needed
-app.get('/robots.txt', (req, res) => {
-    res.sendFile(path.join(__dirname, 'robots.txt'));
-});
+
 
 
 // middleware
