@@ -2,10 +2,25 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const nodeMailer = require('nodemailer');
+const path = require('path');
 app.use(express.static('public'));
 
 
 const PORT = process.env.PORT || 5000;
+
+
+//site map
+
+// Serve sitemap.xml
+app.get('/sitemap.xml', (req, res) => {
+    res.sendFile(path.join(__dirname, 'sitemap.xml'));
+});
+
+// Optional: Serve robots.txt if needed
+app.get('/robots.txt', (req, res) => {
+    res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
 
 // middleware
 
